@@ -1,0 +1,42 @@
+<style>
+
+    /* 가운데 정렬 */
+    /* .content {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+    * {margin:0;padding:0;line-height:1;font-size:16px;} */
+    
+    .highlight {
+        display:inline-table;
+        position:relative;
+        overflow:hidden; 
+        z-index: 2;
+    }
+    .highlight span {
+        position:relative;
+        z-index:3;
+    }
+    .highlight::before {
+        content:'';
+        position:absolute;
+        display:block;
+        top:0;
+        left:-100%;
+        width:100%;
+        height:100%;
+        background:rgba(255,250,0,.8);
+        transition:all 3s;
+    
+        z-index:1;
+    }
+    .content:hover .highlight::before {
+        left:0;
+    }
+    </style>
+    
+    
+    
+    <div class="content">
+        중요한건 꺾이지 않는 <span class="highlight"><span>마음</span></span> <br>
+        중요한건 꺾이지 않는<span class="highlight">마음</span>
+    
+        <!-- div에도 hover를 적용시켜보자 -->
+    </div>
